@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 void main() => runApp(MaterialApp(
-  title: "Random Squares",
-  home: MyApp(),
-));
+      title: "Random Squares",
+      home: MyApp(),
+    ));
 
 class MyApp extends StatefulWidget {
   @override
@@ -62,12 +62,7 @@ class BoxTree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Row(
-          children: <Widget>[
-            Box(),
-
-          ],
-        ),
+        child: Box(),
       ),
     );
   }
@@ -77,17 +72,22 @@ class Box extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorState = ColorState.of(context);
+
     return GestureDetector(
       onTap: colorState.onTap,
-
       child: Container(
-        width: 360.0 ,
-        height: 1000.0,
+        width: double.maxFinite,
+        height: double.maxFinite,
+        alignment: FractionalOffset.center,
         color: colorState.color,
         child: Center(
-          child: Text("I want a job at Solid Software",style: new TextStyle(fontSize: 22.0),),
+          child: Text(
+            "I want a job at Solid Software",
+            style: new TextStyle(fontSize: 22.0),
+          ),
         ),
       ),
     );
+
   }
 }
